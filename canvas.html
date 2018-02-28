@@ -23,27 +23,27 @@
         {p:[{x:800,y:0},{x:700,y:300},{x:800,y:800}],color:"#f6ca29"}
     ];
 
-        window.onload=function () {
+        window.onload = function () {
 
             var canvas = document.getElementById("canvas");
 
             canvas.width = 800;
-            canvas.height = 900;
+            canvas.height = 800;
 
             var context = canvas.getContext("2d");
-            for (var i=0;i<tangram.length;i++){
+            for (var i = 0;i < tangram.length;i++){
                 draw(tangram[i],context)
             }
 
             function draw(piece,cxt) {
                 cxt.beginPath();
                 cxt.moveTo(piece.p[0].x,piece.p[0].y);
-                for (var i=1;i<piece.p.length;i++){
+                for (var i = 1;i < piece.p.length;i++){
                     cxt.lineTo(piece.p[i].x,piece.p[i].y)
                 }
                 cxt.closePath();
 
-                cxt.fillStyle=piece.color;
+                cxt.fillStyle = piece.color;
                 cxt.fill();
             }
         }
